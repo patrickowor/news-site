@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block head %}{{title}}{% endblock %}
+
+{% block search %}is-active{% endblock %}
+
+<style>
+    .heigth {
+        height: 30px !important;
+    }
+</style>
+
+{% block body %}
+    <div class="box my-0">
+        <form action="{{url_for('search')}}" method="GET">
+            <input class="input is-rounded" type="search" name="search" id="search" placeholder="search" />
+        </form>
+          {% if query != '' %}<div>searched for: {{query}}</div>{% endif %}
+    </div>
+    {% if query != '' %}
+    {% for article in data.articles %}
+    {%if (loop.index -1) % 3 == 0 and loop.index -1 != 0 %}
+    </div>
+    <div class="columns ml-3 my-0 ">
+    {%elif ( loop.index -1) % 3 == 0 %}
+        <div class="columns ml-0 my-0 pl-0">
+            {% endif %}
+            <div class="column my-1 py-0 has-shadow heigth pr-5">
+                <a href="{{article.url}}" class="box my-0 ">
+                    <div class="heading">
+                        {{article.title}}
+                    </div>
+                    <div>
+                        <small>{{article.published_at}}</small>
+                        <small>{{article.author}}</small>
+                    </div>
+                    <hr />
+                    <div class="">
+                        {{ few_words(article.description) }}
+                    </div>
+                    <hr />
+                    <div class="px-3 pb-3">
+                        <div class="right">{{article.source.name}}</div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}
