@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block head %}{{title}}{% endblock %}
+
+{% block about %}is-active{% endblock %}
+
+{% block body %}
+    <div class="column my-1 py-0 has-shadow heigth">
+        <div  class="box my-0 ">
+            <div class="heading right is-size-6" >
+                Meet The Maker
+            </div>
+            <div class=" left">
+                <h1 style="font-weight: bolder;" class = "head heading">Owor Patrick Ikongha<h1>
+            </div>
+            <hr />
+            <div class="pics center">
+                <img style="height: 150px; width: 130px; border-radius:50%;" src="{{url_for('static', filename='mee.jpg')}}" alt="owor patrick ikongha"> 
+                <h1 class="is-size-1">
+                    Owor Patrick Ikongha
+                </h1>
+                <hr class="w50 ">
+                <hr class="w60">
+                <hr class="w70">
+                <div class="is-size-5" style="font-weight: bolder;">
+                    patrick owor a student of olabisi onabanjo  university whose hobby include programming, reading, telling stories and rapping  
+                </div>
+                <style>
+
+                    .bd3px{
+                            border-width: 5px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-bottom: black;
+                            font-weight: bold;
+                        }
+                    .fix {
+
+                        font-weight: 900;
+                        color: rgb(0, 102, 255);
+                    }
+                    .fix:hover{
+                        font-weight: 900;
+                        color: rgb(10, 80, 185);
+                    }
+                </style>
+
+                
+            <hr />
+            <div class="px-3 pb-5">
+                <div class="columns left w75">
+                    <a href="https://wa.me/+2347064422922" class="column fix mx-0 mb-3 mt-0 pt-0">
+                        <img style="height: 30px" src='{{url_for("static", filename="git.jpeg")}}' alt="wa.me">
+                        <small>+2347064422922</small>
+                    </a>
+                    <a href="https://github.com/patrickowor" class="column fix mx-5 mb-3 mt-0 pt-0">
+                        <img src="" alt="github">
+                        <small class="mb-2">github</small>
+                    </a>
+                    <a class="column fix mx-5 mb-3 mt-0 pt-0">
+                        <img src="" alt="phone">
+                        <small>07064422922</small>
+                    </a>
+                </div>
+            
+                <div class="right heading">OWORS pride</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
